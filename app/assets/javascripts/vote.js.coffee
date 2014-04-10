@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+# @ make function accessible outside of this file, so AngularJS can see it
+# $scope allows for interacting with the view
+
+@VoteCtrl = ($scope) ->
+  $scope.vote_options = [
+    {title:"Refactoring"}
+    {title:"Continuous Integration"}
+    {title:"Test-Driven Development"}
+  ]

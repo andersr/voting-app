@@ -1,6 +1,14 @@
 <h1>Votes</h1>
+<div ng-controller="VoteCtrl">  
 <form>
 <input type="text" ng-model="newVote.name">
 </form>
 
-{{newVote.name}}
+
+<ul>
+<!-- will loop through the entries array -->
+<li ng-repeat="vote_option in vote_options">
+  {{vote_option.title}}
+</li>  
+</ul> 
+</div>
