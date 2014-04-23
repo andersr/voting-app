@@ -1,4 +1,6 @@
 VotingApp::Application.routes.draw do
+  resources :votes
+
   root "vote#index"
   get "vote/index"
   # The priority is based upon order of creation: first created -> highest priority.

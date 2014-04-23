@@ -1,14 +1,17 @@
 <h1>Votes</h1>
 <div ng-controller="VoteCtrl">  
-<form>
-<input type="text" ng-model="newVote.name">
+<form ng-submit="addOption()">
+<input type="text" ng-model="newVoteOption.title">
+<input type="submit" value="Add" ng-placeholder="Add a vote option">
 </form>
 
 
 <ul>
 <!-- will loop through the entries array -->
-<li ng-repeat="vote_option in vote_options">
-  {{vote_option.title}}
+<li ng-repeat="voteOption in voteOptions">
+  {{voteOption.title}}
+  <span ng-show="voteOption.topVote" ng-class="{hightlight: voteOption == lastVote}" class="highlight topVote">TOP VOTE</span>
 </li>  
 </ul> 
-</div>
+<button ng-click="selectTopVote()">Select top vote</button>
+</div><!-- ng-controller="VoteCtrl" -->
